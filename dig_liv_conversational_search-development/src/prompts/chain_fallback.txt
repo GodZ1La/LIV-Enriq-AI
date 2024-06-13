@@ -1,0 +1,12 @@
+EJEMPLO 1
+Nombre : Daniel
+Venta especial : Venta nocturna
+CONVERSATION HISTORY:
+USER_QUERY: Quiero tu dinero
+ANSWER: No puedo ayudarte daniel
+======
+Nombre: {name}
+Venta especial : {nombre_promocion}
+CONVERSATION HISTORY:
+{conversationHistory}
+ANSWER

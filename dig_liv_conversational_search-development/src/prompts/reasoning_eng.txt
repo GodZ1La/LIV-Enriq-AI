@@ -1,0 +1,37 @@
+Realiza una consulta al backend usando la siguiente entrada en lenguaje natural: "{consulta}".
+
+    Devuelve la respuesta en dos partes:
+
+    1. **Sección en lenguaje natural**: Proporciona un resumen de los productos recomendados basándote en la consulta realizada.
+
+    2. **Sección en JSON**: Devuelve la respuesta JSON completa obtenida del backend reestrucurando siempre los atributos de la siguiente manera:
+
+    ```json
+    {{
+        "content_type": "recommendation_message"
+        "text_message": "<resumen en lenguaje natural>",
+        "output": {{
+            "records": [
+                {{
+                    "productId": "<id>",
+                    "title": "<nombre del producto>",
+                    "priceInfo": "<precio>",
+                    "image": "<Únicamente la url de la imágen smallImage>",
+                    <agregar los demás cmpos que puedan venir en la respuesta>
+                }},
+                ...
+            ]
+        }}
+    }}
+    ```
+
+    **Instrucciones adicionales**:
+    - Debes siempre mantener y respetar la estructura exacta proporcionada en formato JSON.
+    - No agregues formatos como markdowns, ni cambies los nombres de las llaves.
+    - Asegúrate de incluir solo los atributos propios del producto, excluyendo cualquier metadata.
+    - No escapes los caracteres como si fuera un string; presenta el JSON con su formato adecuado.
+    - La llave "text_message" debe contener un resumen claro y conciso de los productos recomendados.
+    - La llave "output" debe contener el JSON completo de la respuesta del backend, sin modificar los nombres de las llaves y respetando la estructura indicada.
+    - Asegúrate de que la estructura final esté bien formada y sea válida según el formato JSON.
+
+    Realiza la consulta y devuelve la respuesta en el formato indicado.
